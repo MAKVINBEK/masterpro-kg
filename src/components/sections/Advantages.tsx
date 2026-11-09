@@ -3,7 +3,7 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { siteConfig } from "@/config/site";
 
 export function Advantages() {
-  const { clogsDays, standardDays } = siteConfig.warranty;
+    const { clogsDays, standardDays, aristonDays } = siteConfig.warranty;
 
   const items = [
     {
@@ -29,7 +29,7 @@ export function Advantages() {
     {
       icon: ShieldCheck,
       title: "Гарантия на работы",
-      text: `${clogsDays} дней на устранение засоров и ${standardDays} дней на стандартные сантехнические и электромонтажные работы.`,
+      text: `${clogsDays} дней на устранение засоров, ${standardDays} дней на стандартные сантехнические и электромонтажные работы, ${aristonDays} дней на ремонт водонагревателей.`, 
     },
     {
       icon: Sparkles,

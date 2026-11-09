@@ -1,6 +1,6 @@
 import { siteConfig } from "@/config/site";
 
-const { clogsDays, standardDays } = siteConfig.warranty;
+const { clogsDays, standardDays, aristonDays } = siteConfig.warranty;
 
 export interface FaqItem {
   question: string;
@@ -24,7 +24,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: "Какая гарантия на работы?",
-    answer: `${clogsDays} дней на устранение засоров и ${standardDays} дней на стандартные сантехнические и электромонтажные работы.`,
+    answer: `${clogsDays} дней на устранение засоров, ${standardDays} дней на стандартные сантехнические и электромонтажные работы и ${aristonDays} дней на ремонт водонагревателей Ariston.`,
   },
   {
     question: "Вы выезжаете в офисы и кафе?",

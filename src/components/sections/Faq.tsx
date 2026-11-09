@@ -1,13 +1,23 @@
 import { ChevronDown } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { faqItems } from "@/data/faq";
+import { faqItems, type FaqItem } from "@/data/faq";
 
-export function Faq() {
+interface FaqProps {
+  items?: FaqItem[];
+  title?: string;
+  tone?: "surface" | "white";
+}
+
+export function Faq({
+  items = faqItems,
+  title = "Частые вопросы",
+  tone = "white",
+}: FaqProps) {
   return (
-    <Section tone="white" id="faq">
-      <SectionHeading eyebrow="FAQ" title="Частые вопросы" />
+    <Section tone={tone} id="faq">
+      <SectionHeading eyebrow="FAQ" title={title} />
       <div className="max-w-3xl space-y-3">
-        {faqItems.map((item) => (
+        {items.map((item) => (
           <details
             key={item.question}
             className="group rounded-2xl border border-line bg-surface"

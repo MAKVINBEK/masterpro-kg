@@ -25,6 +25,7 @@ export const siteConfig = {
   warranty: {
     clogsDays: 7,
     standardDays: 30,
+    aristonDays: 30,
   },
 };
 
