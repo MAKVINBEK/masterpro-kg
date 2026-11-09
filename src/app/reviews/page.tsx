@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { ReviewForm } from "@/components/forms/ReviewForm";
 import { OrderSection } from "@/components/sections/OrderSection";
 import { ReviewCard } from "@/components/sections/ReviewCard";
 import { PageHeader } from "@/components/ui/PageHeader";
-import { Section } from "@/components/ui/Section";
+import { Section, SectionHeading } from "@/components/ui/Section";
 import { reviews } from "@/data/reviews";
 
 const sorted = [...reviews].sort((a, b) => b.date.localeCompare(a.date));
@@ -34,7 +35,7 @@ export default function ReviewsPage() {
             </p>
             <p className="mx-auto mt-2 max-w-xl text-muted">
               Мы публикуем только настоящие отзывы клиентов и не заполняем страницу
-              выдуманными. Если вам нужна консультация, позвоните или напишите нам.
+              выдуманными. Если вы уже обращались к нам, оставьте отзыв в форме ниже.
             </p>
           </div>
         ) : (
@@ -46,10 +47,19 @@ export default function ReviewsPage() {
             ))}
           </ul>
         )}
-        {/* Этап 10: здесь появится форма «Оставить отзыв» */}
       </Section>
 
-      <OrderSection />
+      <Section tone="white" id="leave-review">
+        <SectionHeading
+          title="Оставить отзыв"
+          description="Расскажите, как прошла работа мастера. Отзыв появится на сайте после проверки."
+        />
+        <div className="max-w-xl">
+          <ReviewForm />
+        </div>
+      </Section>
+
+      <OrderSection tone="surface" />
     </>
   );
 }

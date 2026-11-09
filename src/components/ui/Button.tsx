@@ -22,6 +22,14 @@ const sizes: Record<Size, string> = {
   lg: "min-h-12 px-6 text-base",
 };
 
+export function buttonClasses({
+  variant = "primary",
+  size = "lg",
+  className,
+}: { variant?: Variant; size?: Size; className?: string } = {}) {
+  return cn(base, variants[variant], sizes[size], className);
+}
+
 interface ButtonProps
   extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
   href: string;
@@ -38,7 +46,7 @@ export function Button({
   children,
   ...rest
 }: ButtonProps) {
-  const classes = cn(base, variants[variant], sizes[size], className);
+  const classes = buttonClasses({ variant, size, className });
 
   // Внутренние ссылки через Link, а tel:, wa.me и внешние через обычный <a>
   if (href.startsWith("/") || href.startsWith("#")) {
