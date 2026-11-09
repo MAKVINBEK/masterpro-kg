@@ -1,0 +1,39 @@
+import { serviceCategories } from "@/data/services";
+
+export const siteConfig = {
+  name: "MasterPro.kg",
+  url: "https://masterpro.kg",
+  locale: "ru_RU",
+  description:
+    "Выездные мастера в Бишкеке и ближайших пригородах: прочистка засоров, сантехник, электрик, ремонт водонагревателей Ariston.",
+
+  phone: {
+    display: "+996 880 673 038",
+    e164: "+996880673038",
+  },
+  whatsappNumber: "996880673038",
+  // Заполним, когда появится Telegram как канал связи
+  telegramUsername: null as string | null,
+
+  schedule: "Круглосуточно, 24/7",
+
+  area: {
+    text: "Бишкек и ближайшие пригороды",
+    notServed: ["Кант", "Сокулук"],
+  },
+
+  warranty: {
+    clogsDays: 7,
+    standardDays: 30,
+  },
+};
+
+export const phoneHref = `tel:${siteConfig.phone.e164}`;
+export const whatsappHref = `https://wa.me/${siteConfig.whatsappNumber}`;
+
+export const navItems = [
+  ...serviceCategories.map((s) => ({ label: s.shortTitle, href: s.href })),
+  { label: "Цены", href: "/prices/" },
+  { label: "Отзывы", href: "/reviews/" },
+  { label: "Контакты", href: "/contacts/" },
+];
