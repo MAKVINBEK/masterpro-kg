@@ -4,9 +4,9 @@ import { Section } from "@/components/ui/Section";
 import { phoneHref, siteConfig, whatsappHref } from "@/config/site";
 
 // Позже (этап 8) здесь появится форма заявки.
-export function OrderSection() {
+export function OrderSection({ tone = "white" }: { tone?: "surface" | "white" }) {
   return (
-    <Section id="order" tone="white">
+    <Section id="order" tone={tone}>
       <div className="rounded-3xl bg-primary px-6 py-10 text-white sm:px-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
         <div className="max-w-xl">
           <h2 className="text-2xl font-extrabold text-white sm:text-3xl">Вызвать мастера</h2>
