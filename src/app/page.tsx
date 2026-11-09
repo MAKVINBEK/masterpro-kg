@@ -14,7 +14,7 @@ const colors = [
 
 export default function DesignPreviewPage() {
   return (
-    <main>
+    <div>
       <Section tone="white">
         <Container className="px-0 sm:px-0 lg:px-0">
           <h1 className="text-3xl font-extrabold sm:text-5xl">
@@ -70,6 +70,6 @@ export default function DesignPreviewPage() {
           до начала работ и выполняет их аккуратно. Съешь ещё этих мягких французских булок.
         </p>
       </Section>
-    </main>
+    </div>
   );
 }
