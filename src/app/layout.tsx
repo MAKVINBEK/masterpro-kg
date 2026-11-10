@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  verification: {
+    google: siteConfig.verification.google || undefined,
+    yandex: siteConfig.verification.yandex || undefined,
+  },
     openGraph: {
     type: "website",
     locale: siteConfig.locale,
