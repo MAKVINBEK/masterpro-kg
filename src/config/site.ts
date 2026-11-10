@@ -42,10 +42,11 @@ export const siteConfig = {
     standardDays: 30,
     aristonDays: 30,
   },
+  
     // Коды подтверждения сайта в поисковиках (значение content из метатега).
   verification: {
     google: "CBGIRoRr2nUrpRweilna_4O8b5KgRpXyoKL6cT2jACk",
-    yandex: "e0d5aa36c0b273e5",
+    yandex: "e0d5aa36c0b273e5", 
   },
 };
 
