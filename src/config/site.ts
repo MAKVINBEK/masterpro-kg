@@ -2,7 +2,7 @@ import { serviceCategories } from "@/data/services";
 
 export const siteConfig = {
   name: "MasterPro.kg",
-  url: "https://masterpro.kg",
+   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://masterpro.kg").replace(/\/+$/, ""),
   locale: "ru_RU",
   description:
     "Выездные мастера в Бишкеке и ближайших пригородах: прочистка засоров, сантехник, электрик, ремонт водонагревателей Ariston.",
