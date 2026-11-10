@@ -14,6 +14,7 @@ import {
   type ReviewFieldName,
 } from "@/lib/validation";
 import { Field, inputClass } from "./fields";
+import { reachGoal } from "@/lib/analytics";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -96,6 +97,7 @@ export function ReviewForm() {
         setValues(INITIAL);
         submissionId.current = null;
         setStatus("success");
+        reachGoal("review_sent");
         return;
       }
 

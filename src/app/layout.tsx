@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { MobileBottomBar } from "@/components/layout/MobileBottomBar";
 import { siteConfig } from "@/config/site";
+import { YandexMetrica } from "@/components/analytics/YandexMetrica";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main className="flex-1">{children}</main>
         <Footer />
         <MobileBottomBar />
+        <YandexMetrica />
       </body>
     </html>
   );

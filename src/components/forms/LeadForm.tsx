@@ -16,6 +16,7 @@ import {
   type FieldName,
 } from "@/lib/validation";
 import { Field, inputClass } from "./fields";
+import { reachGoal } from "@/lib/analytics";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -110,6 +111,7 @@ export function LeadForm() {
         setValues(makeInitial(pathname));
         submissionId.current = null;
         setStatus("success");
+        reachGoal("lead_sent");
         return;
       }
 
