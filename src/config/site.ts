@@ -1,8 +1,23 @@
 import { serviceCategories } from "@/data/services";
 
+const DEFAULT_SITE_URL = "https://masterpro.kg";
+
+// Адрес сайта берётся из NEXT_PUBLIC_SITE_URL. Пустое или некорректное значение
+// заменяется запасным, а https:// дописывается, если его забыли.
+function resolveSiteUrl(): string {
+  const raw = (process.env.NEXT_PUBLIC_SITE_URL ?? "").trim();
+  if (!raw) return DEFAULT_SITE_URL;
+  const withProtocol = /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
+  try {
+    return new URL(withProtocol).origin;
+  } catch {
+    return DEFAULT_SITE_URL;
+  }
+}
+
 export const siteConfig = {
   name: "MasterPro.kg",
-   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://masterpro.kg").replace(/\/+$/, ""),
+   url: resolveSiteUrl(),
   locale: "ru_RU",
   description:
     "Выездные мастера в Бишкеке и ближайших пригородах: прочистка засоров, сантехник, электрик, ремонт водонагревателей Ariston.",
