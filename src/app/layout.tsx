@@ -20,11 +20,20 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-  openGraph: {
+    openGraph: {
     type: "website",
     locale: siteConfig.locale,
     siteName: siteConfig.name,
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "MasterPro.kg — выездные мастера в Бишкеке",
+      },
+    ],
   },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {

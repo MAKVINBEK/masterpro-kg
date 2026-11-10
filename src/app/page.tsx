@@ -9,6 +9,8 @@ import { OrderSection } from "@/components/sections/OrderSection";
 import { PopularServices } from "@/components/sections/PopularServices";
 import { Reviews } from "@/components/sections/Reviews";
 import { ServiceCategories } from "@/components/sections/ServiceCategories";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { businessSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: {
@@ -22,6 +24,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={businessSchema()} />
       <Hero />
       <ServiceCategories />
       <PopularServices />

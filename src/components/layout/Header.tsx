@@ -8,7 +8,7 @@ import { MobileMenu } from "./MobileMenu";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-line bg-white">
       <Container className="flex h-16 items-center justify-between gap-4">
         <Logo />
 

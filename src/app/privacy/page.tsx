@@ -106,6 +106,7 @@ export default function PrivacyPage() {
     <>
       <PageHeader
         crumb="Политика конфиденциальности"
+        path="/privacy/"
         title="Политика конфиденциальности"
         lead="Как мы обрабатываем данные, которые вы указываете на сайте."
       >

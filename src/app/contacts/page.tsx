@@ -60,6 +60,7 @@ export default function ContactsPage() {
     <>
       <PageHeader
         crumb="Контакты"
+        path="/contacts/"
         title="Контакты MasterPro.kg"
         lead="Позвоните или напишите в WhatsApp. Мы уточним проблему и согласуем стоимость до выезда мастера."
       />

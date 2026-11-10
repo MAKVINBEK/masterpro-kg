@@ -23,6 +23,7 @@ export default function ReviewsPage() {
     <>
       <PageHeader
         crumb="Отзывы"
+        path="/reviews/"
         title="Отзывы клиентов MasterPro.kg"
         lead="Все отзывы публикуются после проверки."
       />

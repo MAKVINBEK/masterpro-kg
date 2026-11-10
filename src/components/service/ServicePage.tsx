@@ -19,6 +19,8 @@ import { phoneHref, siteConfig } from "@/config/site";
 import { PRICE_DISCLAIMER, formatPrice, priceCategories } from "@/data/prices";
 import type { ServicePageContent } from "@/data/service-pages/types";
 import { Phone } from "lucide-react";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { serviceSchema } from "@/lib/schema";
 
 export function ServicePage({ content }: { content: ServicePageContent }) {
   const category = priceCategories.find((c) => c.id === content.id);
@@ -43,9 +45,10 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
 
   return (
     <>
+      <JsonLd data={serviceSchema(content, category)} />
       <section className="bg-white">
         <Container className="py-8 sm:py-12 lg:py-16">
-          <Breadcrumbs items={[{ label: content.breadcrumb }]} />
+          <Breadcrumbs path={content.path} items={[{ label: content.breadcrumb }]} />
           <div className="mt-6 grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
             <div>
               <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
@@ -67,7 +70,8 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
                   src={hero.image.src}
                   alt={hero.image.alt}
                   fill
-                  priority
+                  loading="eager"
+                  fetchPriority="high"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
                 />
